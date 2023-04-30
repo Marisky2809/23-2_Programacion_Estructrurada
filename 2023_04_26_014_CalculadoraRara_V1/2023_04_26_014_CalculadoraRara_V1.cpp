@@ -18,7 +18,7 @@ int main()
     int veces = 0;
     int cuenta10 = 10;
     std::cout << "Hola, soy una calculadora :3" << std::endl;
-    
+
     while (veces < 5) {
         veces++;
         std::cout << "Elije qué tipo de operación quieres realizar : \n\n" <<
@@ -91,11 +91,14 @@ int main()
     }
     std::cout << "Ira, ahora wacha cómo cuento del uno al cien." << std::endl;
     for (int a = 1; a < 101; a++) {
+        system("pause");
         std::cout << a << std::endl;
     }
     std::cout << "Ira, ahora de 10 en 10 *inserte emoji de carita hot*" << std::endl;
     for (int a = 0; a < 10; a++) {
+        system("pause");
         std::cout << cuenta10 << std::endl;
         cuenta10 = cuenta10 + 10;
     }
+    std::cout << "Gracias por utilizar esta calculadora :D" << std::endl;
 }
