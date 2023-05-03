@@ -6,6 +6,8 @@
 //
 
 #include <iostream>
+#include <locale.h>
+#include <Windows.h>
 
 int main()
 {
@@ -17,6 +19,7 @@ int main()
     float resultado = 0;
     int veces = 0;
     int cuenta10 = 10;
+    int b = 1;
     std::cout << "Hola, soy una calculadora :3" << std::endl;
 
     while (veces < 5) {
@@ -89,16 +92,22 @@ int main()
             std::cout << "Híjole, joven; esa no se la vengo manejando. Lea bien qué operaciones puedo hacer, estoy chiquito :(" << std::endl;
         }
     }
-    std::cout << "Ira, ahora wacha cómo cuento del uno al cien." << std::endl;
-    for (int a = 1; a < 101; a++) {
-        system("pause");
+    std::cout << "Ira, ahora wacha cómo cuento del mil al cero." << std::endl;
+    system("PAUSE");
+    for (int a = 1000; a >=0; a--) {
+        Sleep(20);
         std::cout << a << std::endl;
     }
     std::cout << "Ira, ahora de 10 en 10 *inserte emoji de carita hot*" << std::endl;
-    for (int a = 0; a < 10; a++) {
-        system("pause");
-        std::cout << cuenta10 << std::endl;
-        cuenta10 = cuenta10 + 10;
+    system("PAUSE");
+    for (int a = 0; a < 101;a++) {
+        Sleep(100);
+        std::cout << a << " - ";
+        if (b == 10) {
+            std::cout << std::endl;
+            b = 0;
+        }
+        b++;
     }
-    std::cout << "Gracias por utilizar esta calculadora :D" << std::endl;
+    std::cout << "\n\nGracias por utilizar esta calculadora :D" << std::endl;
 }
