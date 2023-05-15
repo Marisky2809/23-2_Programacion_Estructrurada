@@ -20,9 +20,10 @@ int main()
     int veces = 0;
     int cuenta10 = 10;
     int b = 1;
+    int wile = 1000;
     std::cout << "Hola, soy una calculadora :3" << std::endl;
 
-    while (veces < 5) {
+    /*while (veces < 5) {
         veces++;
         std::cout << "Elije qué tipo de operación quieres realizar : \n\n" <<
             "1) Suma\n2) Resta\n3) Multiplicación\n4) División\n5) Mayor o Menor\n6) Valor Absoluto" << std::endl;
@@ -92,13 +93,32 @@ int main()
             std::cout << "Híjole, joven; esa no se la vengo manejando. Lea bien qué operaciones puedo hacer, estoy chiquito :(" << std::endl;
         }
     }
-    std::cout << "Ira, ahora wacha cómo cuento del mil al cero." << std::endl;
+    */
+    std::cout << "Ira, ahora wacha cómo cuento del mil al cero utilizando un for." << std::endl;
     system("PAUSE");
     for (int a = 1000; a >=0; a--) {
-        Sleep(20);
         std::cout << a << std::endl;
     }
-    std::cout << "Ira, ahora de 10 en 10 *inserte emoji de carita hot*" << std::endl;
+    std::cout << "Ira, ahora wacha cómo cuento del mil al cero utilizando un while." << std::endl;
+    system("PAUSE");
+    while(wile>=0) {
+        std::cout << wile << std::endl;
+        wile--;
+    }
+    std::cout << "Ira, ahora wacha cómo cuento del mil al cero utilizando un do while." << std::endl;
+    wile = 1000;
+    system("PAUSE");
+    do{
+        std::cout << wile << std::endl;
+        wile--;
+    } while (wile >= 0);
+    std::cout << "Ira, ahora ve cómo cuento del 0 al 100, pero más lento :D" << std::endl;
+    system("PAUSE");
+    for (int a = 0; a <= 100; a++) {
+        Sleep(100);
+        std::cout << a << std::endl;
+    }
+    std::cout << "Ira, ahora de 10 en 10 iré saltando espacios *inserte emoji de carita hot*" << std::endl;
     system("PAUSE");
     for (int a = 0; a < 101;a++) {
         Sleep(100);
