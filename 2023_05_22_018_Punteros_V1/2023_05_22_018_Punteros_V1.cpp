@@ -8,9 +8,12 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include <Windows.h>
+#include <string>
+#include <string.h>
 
 int main()
 {
+    setlocale(LC_ALL, "es_MX.UTF-8");
     //Punteros:
     int edad = 0;
     int* apuntador = &edad;
@@ -31,32 +34,41 @@ int main()
     system("PAUSE");
     system("CLS");
     Sleep(100);
-    int filas = 0;
-    int columnas = 0;
+    //Para crear arreglos dinámicos necesitamos memoria no estática. Esto se logra con punteros
+    //Creamos la variable puntera y la inicializamos en NULL.
+    std::string* titulos = NULL;
+    std::string* autores = NULL;
+    //std::string libros[10]; Memoria Estática
+    int peliculas;
 
     std::cout << "Hola, usuario :)\nSoy una máquina de hacer matrices, wuuuuu" << std::endl;
-    std::cout << "Dime, cuántas filas quieres que tenga tu matriz?" << std::endl;
-    std::cin >> filas;
-    std::cout << "Y cuántas columnas quieres que tenga?" << std::endl;
-    std::cin >> columnas;
+    std::cout << "Dime, cuántas películas quieres ingresar?" << std::endl;
+    std::cin >> peliculas;
 
+    //Crear arreglos dinámicos
+    titulos = new std::string[peliculas];
+    autores = new std::string[peliculas];
 
-    int** matriz = new int* [filas];
-    for (int i=0; i < filas; i++) {
-        matriz[i] = new int[columnas];
-    }
-
-    std::cout << "OK, ayúdame a ingresar los datos:" << std::endl;
-    for (int i = 0; i < filas; i++) {
-        for (int j = 0; j <= columnas; j++) {
-            std::cout << "Dame un número para la coordenada (" << i << ", " << j << ")" << std::endl;
-            std::cin >> j;
+    
+    //Ahora solicita la información:
+    for (int i = 0; i < peliculas; i++) {
+        if (i == 0) {
+            std::cin.ignore();
         }
+        std::cout << "Película " << i+1 << ": " << std::endl;
+        getline(std::cin, titulos[i]);
+        std::cout << "Quién es su autor?" << std::endl;
+        getline(std::cin, autores[i]);
     }
-    for (int i = 0; i < filas; i++) {
-        for (int j = 0; j <= columnas; j++) {
-            std::cout << matriz[i][j] << " ";
-        }
-        std::cout << std::endl;
+    system("CLS");
+    //imprimir información:
+    for (int i = 0; i < peliculas; i++) {
+        std::cout << "El título de la película " << i+1 << " es:\n" << titulos[i];
+        std::cout << "\nEl autor de dicha película es: " << autores[i] << std::endl << std::endl;
     }
+    //Destruir memoria dinámica
+    delete[] titulos;
+    delete[] autores;
+    titulos = NULL;
+    autores = NULL;
 }
